@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "961562159750",
+    "project_id": "comefit-45fe0",
+    "storage_bucket": "comefit-45fe0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:961562159750:android:e65e98f31298041b733f07",
+        "android_client_info": {
+          "package_name": "co.edu.ecordoba263.comefit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "961562159750-lm9n37jdvrotge8un72viait5itbpp7g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsgkdyEBWVX1d3cKOi599I0fX2dqSg7r8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "961562159750-lm9n37jdvrotge8un72viait5itbpp7g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
