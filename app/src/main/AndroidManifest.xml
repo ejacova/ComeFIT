@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ComeFIT">
         <activity
+            android:name=".RegisterActivity"
+            android:exported="true" />
+        <activity
             android:name=".Menu"
             android:exported="true" />
         <activity

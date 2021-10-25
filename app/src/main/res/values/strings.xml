@@ -4,4 +4,11 @@
     <string name="hint_contraseña">Contraseña</string>
     <string name="txt_registrar">Registrar</string>
     <string name="txt_ingresar">Ingresar</string>
+    <string name="nombre_registrar">Nombre de usuario</string>
+    <string name="fecha_registrar">Fecha de nacimiento</string>
+    <string name="contraseña_registrar">Contraseña</string>
+    <string name="contraseñaConfirmar_registrar">Confirmar contraseña</string>
+    <string name="edad_registrar">Edad</string>
+    <string name="altura_registrar">Altura(cm)</string>
+    <string name="peso_registrar">Peso(kg)</string>
 </resources>
