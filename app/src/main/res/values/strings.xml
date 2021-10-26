@@ -11,4 +11,6 @@
     <string name="edad_registrar">Edad</string>
     <string name="altura_registrar">Altura(cm)</string>
     <string name="peso_registrar">Peso(kg)</string>
+    <string name="tv_registrar">Registrar usuario</string>
+    <string name="btn_registrar">Registrar</string>
 </resources>
