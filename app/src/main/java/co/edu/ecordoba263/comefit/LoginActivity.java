@@ -1,5 +1,6 @@
 package co.edu.ecordoba263.comefit;
 
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,72 +16,91 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class LoginActivity extends AppCompatActivity {
 
     private static final String TAG = "Antut";
-    private FirebaseAuth mAuth;
-    private FirebaseAuth.AuthStateListener mAuthListener;
     private EditText etUsuario, etContraseña;
     private Button btnIngresar;
+    private Button btnRegistrar;
+
+    private FirebaseAuth firebaseAuth;
+    private DatabaseReference mRootReference;
+
+    private PersonaPOJO persona;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        mAuth = FirebaseAuth.getInstance();
+        firebaseAuth = FirebaseAuth.getInstance();
+        mRootReference = FirebaseDatabase.getInstance().getReference();
+
         etUsuario = findViewById(R.id.tv_nombre_usuario);
         etContraseña = findViewById(R.id.tv_contraseña);
         btnIngresar = findViewById(R.id.btn_ingresar);
-
-
-        mAuthListener = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                if(firebaseAuth.getCurrentUser()!= null){
-                    startActivity(new Intent(LoginActivity.this, Menu.class));}
-                else{
-                    Toast.makeText(LoginActivity.this, "DATOS ERRONEOS",Toast.LENGTH_SHORT).show();
-                }
-            }
-
-        };
+        btnRegistrar = findViewById(R.id.btn_registrar);
 
         btnIngresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                logearUsuario();
+                cargarDatosFireBase();
+            }
+        });
+
+        btnRegistrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
+            }
+        });
+
+
+
+    }
+
+    private void cargarDatosFireBase() {
+
+        mRootReference.child("Usuario").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                for(final DataSnapshot snapshot : dataSnapshot.getChildren()) {
+
+                    mRootReference.child("Usuario").child(snapshot.getKey()).addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                            persona = snapshot.getValue(PersonaPOJO.class);
+
+                            if(etUsuario.getText().toString().equals(persona.getEmail())){
+                                if(etContraseña.getText().toString().equals(persona.getContraseña())){
+                                    startActivity(new Intent(LoginActivity.this, Menu.class));
+                                }else{ Toast.makeText(LoginActivity.this, "Usuario o Contraseña equivocados", Toast.LENGTH_SHORT).show();}
+                            }else{
+                                Toast.makeText(LoginActivity.this, "Usuario o Contraseña equivocados", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) { }
+                    });
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
             }
         });
 
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
-        mAuth.addAuthStateListener(mAuthListener);
-    }
 
-    private void logearUsuario() {
-
-        String user = etUsuario.getText().toString();
-        String password = etContraseña.getText().toString();
-
-        mAuth.createUserWithEmailAndPassword(user, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        Log.d(TAG, "createUserandEmail:onComplete: "+task.isSuccessful());
-
-                        if(!task.isSuccessful()){
-                            Toast.makeText(LoginActivity.this, "Usuario y contraseña erroneos", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
-
-
-    }
 }

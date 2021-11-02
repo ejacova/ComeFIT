@@ -1,6 +1,7 @@
 package co.edu.ecordoba263.comefit;
 
-public class Persona {
+public class PersonaPOJO {
+
     private String email;
     private String contraseña;
     private String nombre;
@@ -11,19 +12,7 @@ public class Persona {
     private float peso;
     private float metabolismo;
 
-    public Persona() {
-    }
-
-    public Persona(String email, String contraseña, String nombre, String apellido, String fechaNacimiento, int edad, float altura, float peso, float metabolismo) {
-        this.email = email;
-        this.contraseña = contraseña;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.fechaNacimiento = fechaNacimiento;
-        this.edad = edad;
-        this.altura = altura;
-        this.peso = peso;
-        this.metabolismo = metabolismo;
+    public PersonaPOJO() {
     }
 
     public String getEmail() {

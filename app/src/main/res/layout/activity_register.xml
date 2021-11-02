@@ -22,12 +22,12 @@
             app:layout_constraintHorizontal_bias="0.531"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_launcher_background" />
+            app:srcCompat="@drawable/fondo" />
 
         <EditText
             android:id="@+id/et_nombre"
             android:layout_width="230dp"
-            android:layout_height="45dp"
+            android:layout_height="48dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="16dp"
@@ -42,7 +42,7 @@
         <EditText
             android:id="@+id/et_fecha"
             android:layout_width="230dp"
-            android:layout_height="45dp"
+            android:layout_height="48dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="16dp"
@@ -57,7 +57,7 @@
         <EditText
             android:id="@+id/et_edad"
             android:layout_width="230dp"
-            android:layout_height="45dp"
+            android:layout_height="48dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="16dp"
@@ -72,7 +72,7 @@
         <EditText
             android:id="@+id/et_altura"
             android:layout_width="230dp"
-            android:layout_height="45dp"
+            android:layout_height="48dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="16dp"
@@ -102,7 +102,7 @@
         <EditText
             android:id="@+id/et_contraseña"
             android:layout_width="230dp"
-            android:layout_height="45dp"
+            android:layout_height="48dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="16dp"
@@ -117,7 +117,7 @@
         <EditText
             android:id="@+id/et_conf_contraseña"
             android:layout_width="230dp"
-            android:layout_height="45dp"
+            android:layout_height="48dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="16dp"
@@ -132,7 +132,7 @@
         <EditText
             android:id="@+id/et_peso"
             android:layout_width="230dp"
-            android:layout_height="45dp"
+            android:layout_height="48dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="16dp"
