@@ -13,4 +13,10 @@
     <string name="peso_registrar">Peso(kg)</string>
     <string name="tv_registrar">Registrar usuario</string>
     <string name="btn_registrar">Registrar</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="txt_agendar">Agendar</string>
+    <string name="txt_calculadora">Calculadora</string>
+    <string name="txt_calendario">Calendario</string>
+    <string name="txt_menu">Menú</string>
 </resources>
