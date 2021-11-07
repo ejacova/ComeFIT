@@ -19,4 +19,11 @@
     <string name="txt_calculadora">Calculadora</string>
     <string name="txt_calendario">Calendario</string>
     <string name="txt_menu">Menú</string>
+
+    <string name="txt_recordatorio">Todas tus metas</string>
+    <string name="txt_vistarecordatorio">Tu Meta</string>
+    <string name="txt_metaTitulo">Para:</string>
+    <string name="nuevameta">Nombre de Nueva Meta</string>
+    <string name="fechameta">Ingrese la Fecha de tu Meta</string>
+    <string name="descripcionMeta">Ingresa algunas notas a tu Meta</string>
 </resources>

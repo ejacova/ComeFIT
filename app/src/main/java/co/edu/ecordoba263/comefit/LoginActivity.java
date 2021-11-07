@@ -43,6 +43,7 @@ public class LoginActivity extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
         mRootReference = FirebaseDatabase.getInstance().getReference();
+        mRootReference.getDatabase();
 
         etUsuario = findViewById(R.id.tv_nombre_usuario);
         etContraseña = findViewById(R.id.tv_contraseña);
@@ -83,7 +84,9 @@ public class LoginActivity extends AppCompatActivity {
 
                             if(etUsuario.getText().toString().equals(persona.getEmail())){
                                 if(etContraseña.getText().toString().equals(persona.getContraseña())){
-                                    startActivity(new Intent(LoginActivity.this, Menu.class));
+                                    Intent intent = new Intent(LoginActivity.this, Menu.class);
+                                    intent.putExtra("idUsuario", persona.getId());
+                                    startActivity(intent);
                                 }else{ Toast.makeText(LoginActivity.this, "Usuario o Contraseña equivocados", Toast.LENGTH_SHORT).show();}
                             }else{
                                 Toast.makeText(LoginActivity.this, "Usuario o Contraseña equivocados", Toast.LENGTH_SHORT).show();

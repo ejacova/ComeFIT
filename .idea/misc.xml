@@ -3,11 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Franklin/AndroidStudioProjects/ComeFIT/app/src/main/res/layout/activity_login.xml" value="0.2" />
-        <entry key="..\:/Users/Franklin/AndroidStudioProjects/ComeFIT/app/src/main/res/layout/activity_menu.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/Franklin/AndroidStudioProjects/ComeFIT/app/src/main/res/layout/activity_register.xml" value="0.22" />
-        <entry key="..\:/Users/Franklin/AndroidStudioProjects/ComeFIT/app/src/main/res/layout/fragment_menu.xml" value="0.19972826086956522" />
-        <entry key="..\:/Users/Franklin/AndroidStudioProjects/ComeFIT/app/src/main/res/menu/menu.xml" value="0.20416666666666666" />
+        <entry key="..\:/ComeFIT/app/src/main/res/layout/activity_editar_recordatorio.xml" value="0.25885416666666666" />
+        <entry key="..\:/ComeFIT/app/src/main/res/layout/activity_login.xml" value="0.33" />
+        <entry key="..\:/ComeFIT/app/src/main/res/layout/activity_main.xml" value="0.26875" />
+        <entry key="..\:/ComeFIT/app/src/main/res/layout/activity_menu.xml" value="0.25" />
+        <entry key="..\:/ComeFIT/app/src/main/res/layout/activity_metas.xml" value="0.2545289855072464" />
+        <entry key="..\:/ComeFIT/app/src/main/res/layout/activity_register.xml" value="0.27291666666666664" />
+        <entry key="..\:/ComeFIT/app/src/main/res/layout/activity_vista_recordatorio.xml" value="0.33" />
+        <entry key="..\:/ComeFIT/app/src/main/res/layout/fragment_menu.xml" value="0.27291666666666664" />
       </map>
     </option>
   </component>

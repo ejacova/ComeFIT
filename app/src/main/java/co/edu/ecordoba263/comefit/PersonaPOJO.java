@@ -2,6 +2,7 @@ package co.edu.ecordoba263.comefit;
 
 public class PersonaPOJO {
 
+    private int id;
     private String email;
     private String contraseña;
     private String nombre;
@@ -13,6 +14,14 @@ public class PersonaPOJO {
     private float metabolismo;
 
     public PersonaPOJO() {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getEmail() {
