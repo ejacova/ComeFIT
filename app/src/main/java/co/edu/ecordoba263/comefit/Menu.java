@@ -11,12 +11,7 @@ import android.widget.LinearLayout;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-import co.edu.ecordoba263.comefit.fragment.FragmentMenu;
-
-public class Menu extends AppCompatActivity implements FragmentMenu.OnFragmentInteractionListener {
-
-    Fragment fragmentMenu;
-
+public class Menu extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,16 +31,6 @@ public class Menu extends AppCompatActivity implements FragmentMenu.OnFragmentIn
 
             }
         });*/
-
-    }
-
-    @Override
-    public void onBackPressed() {
-        FirebaseAuth.getInstance().signOut();
-        startActivity(new Intent(Menu.this, LoginActivity.class));
-    }
-
-    public void onFragmentInteraction(Uri uri){
 
     }
 }
