@@ -26,4 +26,5 @@
     <string name="nuevameta">Nombre de Nueva Meta</string>
     <string name="fechameta">Ingrese la Fecha de tu Meta</string>
     <string name="descripcionMeta">Ingresa algunas notas a tu Meta</string>
+    <string name="txt_saludo">¡Bienvenido!</string>
 </resources>
