@@ -70,9 +70,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     private int asignarId(int tamaño) {
         int id = 1;
-
         if(tamaño == 0){
-            Log.d("IDASIGNADO", String.valueOf(id));
             return id;
         }else{
             for(int i=1;i<tamaño+1;i++) {
@@ -82,10 +80,8 @@ public class RegisterActivity extends AppCompatActivity {
                     id=i;
                 }
             }
-            Log.d("IDASIGNADO", String.valueOf(id));
           return id;
         }
-
     }
 
     private void cargarDatosFireBase() {
@@ -97,7 +93,6 @@ public class RegisterActivity extends AppCompatActivity {
                     personap = ds.getValue(PersonaPOJO.class);
                     IDS.add(personap.getId());
                 }
-                Log.d("IDS", String.valueOf(IDS));
 
                 String correo = email.getText().toString();
                 String con = contraseña.getText().toString();

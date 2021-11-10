@@ -52,7 +52,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="2"
+            android:layout_weight="3.5"
             android:orientation="vertical">
 
             <TextView
@@ -65,7 +65,7 @@
             <EditText
                 android:id="@+id/edt_nombreTarea"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
@@ -75,7 +75,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="2"
+            android:layout_weight="3.5"
             android:orientation="vertical">
 
             <TextView
@@ -88,7 +88,7 @@
             <EditText
                 android:id="@+id/et_fechaMeta"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:ems="10"
                 android:inputType="date"
                 android:minHeight="48dp"
@@ -99,7 +99,30 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_weight="3.5"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt_caloriasMetas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_pesoMeta"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/edt_caloriasMetas"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:inputType="number"
+                android:minHeight="48dp"
+                tools:ignore="SpeakableTextPresentCheck" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2.8"
             android:orientation="vertical">
 
             <TextView
@@ -121,14 +144,17 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="2"
+            android:layout_weight="3.7"
+            android:gravity="center"
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/brn_guardartMeta"
+                android:id="@+id/btn_guardartMeta"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Guardar" />
+                android:backgroundTint="#B6B6B6"
+                android:text="Guardar"
+                android:textColor="#000000" />
         </LinearLayout>
     </LinearLayout>
 

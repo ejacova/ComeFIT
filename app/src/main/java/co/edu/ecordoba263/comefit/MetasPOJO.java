@@ -1,11 +1,13 @@
 package co.edu.ecordoba263.comefit;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class MetasPOJO {
+public class MetasPOJO implements Serializable {
 
         private String nombreMeta;
-        private Date fechaMeta;
+        private String fechaMeta;
+        private int caloríasMeta;
         private String descripcionMeta;
         private int idUsuario;
 
@@ -17,11 +19,11 @@ public class MetasPOJO {
         this.nombreMeta = nombreMeta;
     }
 
-    public Date getFechaMeta() {
+    public String getFechaMeta() {
         return fechaMeta;
     }
 
-    public void setFechaMeta(Date fechaMeta) {
+    public void setFechaMeta(String fechaMeta) {
         this.fechaMeta = fechaMeta;
     }
 
@@ -39,5 +41,13 @@ public class MetasPOJO {
 
     public void setIdUsuario(int idUsuario) {
         this.idUsuario = idUsuario;
+    }
+
+    public int getCaloríasMeta() {
+        return caloríasMeta;
+    }
+
+    public void setCaloríasMeta(int caloríasMeta) {
+        this.caloríasMeta = caloríasMeta;
     }
 }

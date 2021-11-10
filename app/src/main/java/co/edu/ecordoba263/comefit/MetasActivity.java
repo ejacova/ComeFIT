@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ListView;
@@ -18,6 +20,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 public class MetasActivity extends AppCompatActivity {
@@ -25,11 +28,13 @@ public class MetasActivity extends AppCompatActivity {
     private ListView listWorks;
     private ArrayAdapter adapter;
     private ImageButton btnAtras;
-    private ArrayList<MetasPOJO> misMetas;
+    private ArrayList<String> misMetas;
+    private ArrayList<MetasPOJO> listaMetas;
     private FloatingActionButton btnAñadir;
     private int id;
     private DatabaseReference mRootReference;
-    private MetasPOJO metasP;
+    public MetasPOJO metasP;
+    private Intent enviarRecordatorio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,16 +46,14 @@ public class MetasActivity extends AppCompatActivity {
         listWorks = findViewById(R.id.list_recordatorios);
         btnAtras = findViewById(R.id.imgbtn_back);
         btnAñadir = findViewById(R.id.actbtn_añadirTarea);
-        misMetas = new ArrayList<MetasPOJO>();
+        misMetas = new ArrayList<String>();
+        listaMetas = new ArrayList<MetasPOJO>();
+        enviarRecordatorio  = new Intent(MetasActivity.this, vistaRecordatorio.class);
 
         adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, misMetas);
         listWorks.setAdapter(adapter);
 
-        /*if(getIntent().getSerializableExtra("Metas") != null){
-            misMetas = (ArrayList<Metas>) getIntent().getSerializableExtra("Metas");
-        }*/
-
-       id = (Integer) getIntent().getSerializableExtra("idUsuario");
+       id = (int) getIntent().getSerializableExtra("idUsuario");
        cargarRecordatorios(id);
 
         btnAtras.setOnClickListener(new View.OnClickListener() {
@@ -69,6 +72,14 @@ public class MetasActivity extends AppCompatActivity {
             }
         });
 
+        listWorks.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                enviarRecordatorio.putExtra("idUsuario", id);
+                startActivity(enviarRecordatorio);
+            }
+        });
+        Log.d("RECORDATORIOS", String.valueOf(listaMetas));
 
     }
 
@@ -80,13 +91,18 @@ public class MetasActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot ds: snapshot.getChildren()){
                     metasP = ds.getValue(MetasPOJO.class);
+
                     if(id == metasP.getIdUsuario()){
-                        misMetas.add(metasP);
+                        listaMetas.add(metasP);
+                        misMetas.add(metasP.getNombreMeta().toString());
                         adapter.notifyDataSetChanged();
+
+                        enviarRecordatorio.putExtra("meta", metasP);
                     }
 
                 }
-                Log.d("IDS", String.valueOf(misMetas));
+
+
             }
 
             @Override

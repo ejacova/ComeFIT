@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">ComeFIT</string>
-    <string name="hint_nombre_usuario">Nombre de Usurio</string>
+    <string name="hint_nombre_usuario">Nombre de Usuario</string>
     <string name="hint_contraseña">Contraseña</string>
     <string name="txt_registrar">Registrar</string>
     <string name="txt_ingresar">Ingresar</string>
@@ -15,10 +15,10 @@
     <string name="btn_registrar">Registrar</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="txt_agendar">Agendar</string>
-    <string name="txt_calculadora">Calculadora</string>
+    <string name="txt_agendar">Recordatorios</string>
+    <string name="txt_calculadora">Calculadora de Calorias</string>
     <string name="txt_calendario">Calendario</string>
-    <string name="txt_menu">Menú</string>
+    <string name="txt_menu">Recetario</string>
 
     <string name="txt_recordatorio">Todas tus metas</string>
     <string name="txt_vistarecordatorio">Tu Meta</string>
@@ -27,4 +27,5 @@
     <string name="fechameta">Ingrese la Fecha de tu Meta</string>
     <string name="descripcionMeta">Ingresa algunas notas a tu Meta</string>
     <string name="txt_saludo">¡Bienvenido!</string>
+    <string name="txt_pesoMeta">Ingresa las calorías que vas a consumir</string>
 </resources>

@@ -1,6 +1,7 @@
 package co.edu.ecordoba263.comefit;
 
 public class Persona {
+
     private int id;
     private String email;
     private String contraseña;

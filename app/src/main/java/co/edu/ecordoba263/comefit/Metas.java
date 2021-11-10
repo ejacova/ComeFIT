@@ -1,18 +1,20 @@
 package co.edu.ecordoba263.comefit;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Metas {
+public class Metas implements Serializable {
 
     private String nombreMeta;
-    private Date fechaMeta;
+    private String fechaMeta;
+    private int caloríasMeta;
     private String descripcionMeta;
     private int idUsuario;
 
     public Metas() {
     }
 
-    public Metas(String nombreMeta, Date fechaMeta, String descripcionMeta) {
+    public Metas(String nombreMeta, String fechaMeta, String descripcionMeta) {
         this.nombreMeta = nombreMeta;
         this.fechaMeta = fechaMeta;
         this.descripcionMeta = descripcionMeta;
@@ -26,11 +28,11 @@ public class Metas {
         this.nombreMeta = nombreMeta;
     }
 
-    public Date getFechaMeta() {
+    public String getFechaMeta() {
         return fechaMeta;
     }
 
-    public void setFechaMeta(Date fechaMeta) {
+    public void setFechaMeta(String fechaMeta) {
         this.fechaMeta = fechaMeta;
     }
 
@@ -48,5 +50,13 @@ public class Metas {
 
     public void setIdUsuario(int idUsuario) {
         this.idUsuario = idUsuario;
+    }
+
+    public int getCaloríasMeta() {
+        return caloríasMeta;
+    }
+
+    public void setCaloríasMeta(int caloríasMeta) {
+        this.caloríasMeta = caloríasMeta;
     }
 }
