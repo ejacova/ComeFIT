@@ -15,7 +15,7 @@
     <string name="btn_registrar">Registrar</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="txt_agendar">Recordatorios</string>
+    <string name="txt_agendar">Recordatorio</string>
     <string name="txt_calculadora">Calculadora de Calorias</string>
     <string name="txt_calendario">Calendario</string>
     <string name="txt_menu">Recetario</string>
